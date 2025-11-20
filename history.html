@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History - SmartBank Pro</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/history.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar content can be added here -->
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="4" width="16" height="16" rx="2" fill="#4285f4"/>
+                        <path d="M8 8H16M8 12H16M8 16H12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>SmartBank Pro</h1>
+                    <p>Secure Banking Platform</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="header-btn dark-mode-btn" id="darkModeBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Dark Mode</span>
+                </button>
+                <button class="header-btn logout-btn" onclick="window.location.href='login.html'">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 17L21 12L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="history-content">
+            <!-- Page Title -->
+            <h2 class="page-title" id="transactionCount">2 transactions</h2>
+
+            <!-- Filter Section -->
+            <div class="filter-card">
+                <div class="filter-header">
+                    <svg class="filter-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 3H2L10 12.46V19L14 21V12.46L22 3Z" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <label class="filter-label">Filter by type</label>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="deposit">Deposits</button>
+                    <button class="filter-btn" data-filter="withdrawal">Withdrawals</button>
+                    <button class="filter-btn" data-filter="penalty">Penalties</button>
+                    <button class="filter-btn" data-filter="interest">Interest</button>
+                </div>
+            </div>
+
+            <!-- Transaction List -->
+            <div class="transactions-list" id="transactionsList">
+                <!-- Transaction Card 1 -->
+                <div class="transaction-card" data-type="deposit">
+                    <div class="transaction-icon deposit-transaction-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M12 5L7 10M12 5L17 10" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="transaction-details">
+                        <div class="transaction-header">
+                            <span class="transaction-type">Deposit</span>
+                            <span class="transaction-tag deposit-tag">deposit</span>
+                        </div>
+                        <div class="transaction-date">Nov 13, 2025, 10:51 AM</div>
+                    </div>
+                    <div class="transaction-amount-section">
+                        <div class="transaction-amount deposit-amount">+৳3,000.00</div>
+                        <div class="transaction-balance">Balance: ৳3,000.00</div>
+                    </div>
+                </div>
+
+                <!-- Transaction Card 2 -->
+                <div class="transaction-card" data-type="deposit">
+                    <div class="transaction-icon deposit-transaction-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M12 5L7 10M12 5L17 10" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="transaction-details">
+                        <div class="transaction-header">
+                            <span class="transaction-type">Deposit</span>
+                            <span class="transaction-tag deposit-tag">deposit</span>
+                        </div>
+                        <div class="transaction-date">Nov 15, 2025, 10:51 AM</div>
+                    </div>
+                    <div class="transaction-amount-section">
+                        <div class="transaction-amount deposit-amount">+৳2,000.00</div>
+                        <div class="transaction-balance">Balance: ৳5,000.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="summary-card">
+                <h3 class="summary-title">Summary</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <div class="summary-label">Total Deposits</div>
+                        <div class="summary-value deposit-value" id="totalDeposits">2</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-label">Total Withdrawals</div>
+                        <div class="summary-value withdrawal-value" id="totalWithdrawals">0</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-label">Penalties</div>
+                        <div class="summary-value penalty-value" id="totalPenalties">0</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-label">Interest</div>
+                        <div class="summary-value interest-value" id="totalInterest">0</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active state
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+
+                // Filter transactions
+                const filter = this.getAttribute('data-filter');
+                const transactions = document.querySelectorAll('.transaction-card');
+                let visibleCount = 0;
+
+                transactions.forEach(transaction => {
+                    const transactionType = transaction.getAttribute('data-type');
+                    if (filter === 'all' || transactionType === filter) {
+                        transaction.style.display = 'flex';
+                        visibleCount++;
+                    } else {
+                        transaction.style.display = 'none';
+                    }
+                });
+
+                // Update transaction count
+                document.getElementById('transactionCount').textContent = visibleCount + ' transaction' + (visibleCount !== 1 ? 's' : '');
+            });
+        });
+
+        // Dark mode toggle
+        document.getElementById('darkModeBtn').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            this.querySelector('span').textContent = isDark ? 'Light Mode' : 'Dark Mode';
+        });
+    </script>
+</body>
+</html>
